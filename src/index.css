@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --neutral-50: #FCFAF8;
+  --neutral-100: #F3EFE9;
+  --neutral-150: #EAE3DA;
+  --neutral-200: #E0D7CC;
+  --neutral-300: #C2B3A3;
+  --neutral-400: #A89887;
+  --neutral-450: #8E7D6D;
+  --neutral-500: #786859;
+  --neutral-550: #625345;
+  --neutral-600: #514236;
+  --neutral-700: #42352B;
+  --neutral-800: #332820;
+  --neutral-805: #2B211A;
+  --neutral-900: #241A14;
+  --neutral-905: #1C140F;
+  --neutral-950: #140D0A;
+
+  --color-primary-50: #fff5f6;
+  --color-primary-100: #ffebeb;
+  --color-primary-200: #ffd1d6;
+  --color-primary-300: #ffa5b0;
+  --color-primary-400: #ff6f85;
+  --color-primary-500: #ff3b5c;
+  --color-primary-600: #e01a3d;
+  --color-primary-700: #bd0a2a;
+  
+  --color-brand-peach: #FFEBE0;
+  --color-brand-coral: #FF8BA1;
+  --color-brand-secondary: #FBCFE8;
+  --color-brand-lavender: #F3E8FF;
+  --color-brand-yellow: #FEF3C7;
+  --color-brand-mint: #D1FAE5;
+}
+
+.dark {
+  --neutral-50: #FFF5F6;
+  --neutral-100: #FFE3E7;
+  --neutral-150: #FFD2D8;
+  --neutral-200: #FFBAC4;
+  --neutral-300: #FFA3B1;
+  --neutral-400: #E67E90;
+  --neutral-450: #D86B7E;
+  --neutral-500: #C95C6E;
+  --neutral-550: #AE4D5E;
+  --neutral-600: #943F4F;
+  --neutral-700: #7E3241;
+  --neutral-800: #652532;
+  --neutral-805: #571C28;
+  --neutral-900: #491420;
+  --neutral-905: #3F0E18;
+  --neutral-950: #2F070F;
+
+  --color-primary-50: #fff0f2;
+  --color-primary-100: #ffdfe3;
+  --color-primary-200: #ffb8c1;
+  --color-primary-300: #ff91a1;
+  --color-primary-400: #fb6a81;
+  --color-primary-500: #f03e5c;
+  --color-primary-600: #d61c3b;
+  --color-primary-700: #af0d28;
+
+  --color-brand-peach: #FFF0E6;
+  --color-brand-coral: #FF7D96;
+  --color-brand-secondary: #F472B6;
+  --color-brand-lavender: #E9D5FF;
+  --color-brand-yellow: #FDE68A;
+  --color-brand-mint: #A7F3D0;
+}
+
+@theme {
+  --color-neutral-50: var(--neutral-50);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-150: var(--neutral-150);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-450: var(--neutral-450);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-550: var(--neutral-550);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-805: var(--neutral-805);
+  --color-neutral-900: var(--neutral-900);
+  --color-neutral-905: var(--neutral-905);
+  --color-neutral-950: var(--neutral-950);
+
+  --color-brand-peach: var(--color-brand-peach);
+  --color-brand-coral: var(--color-brand-coral);
+  --color-brand-secondary: var(--color-brand-secondary);
+  --color-brand-lavender: var(--color-brand-lavender);
+  --color-brand-yellow: var(--color-brand-yellow);
+  --color-brand-mint: var(--color-brand-mint);
+
+  --font-fredoka: "Fredoka", system-ui, -apple-system, sans-serif;
+  --font-sans: "Quicksand", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: float 9s ease-in-out infinite;
+  --animate-float-fast: float 4s ease-in-out infinite;
+  --animate-spin-slow: spin 12s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(2deg); }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neutral-150);
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--neutral-200);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-coral);
+}
+
+/* Crochet stitch design element */
+.crochet-stitch-border {
+  background-image: radial-gradient(circle, var(--neutral-200) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+/* Theme body setup */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--neutral-50);
+  color: var(--neutral-900);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(252, 250, 248, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 139, 161, 0.15);
+}
+
+.dark .glass-panel {
+  background: rgba(255, 245, 246, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 125, 150, 0.2);
+}
