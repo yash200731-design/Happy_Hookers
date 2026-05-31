@@ -13,7 +13,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-primary-50 to-white dark:from-primary-50/50 dark:to-neutral-50 py-12 md:py-20 lg:py-28 transition-colors duration-300">
+    <section className="relative overflow-hidden bg-gradient-to-b from-primary-50/50 to-white/10 dark:from-primary-50/20 dark:to-neutral-50/10 py-12 md:py-20 lg:py-28 transition-colors duration-300">
       
       {/* Absolute Decorative Floating Elements */}
       {/* Floating Yarn Ball 1 (Rose Pink) */}

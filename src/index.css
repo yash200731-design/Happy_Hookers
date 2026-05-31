@@ -145,7 +145,7 @@
 body {
   font-family: var(--font-sans);
   background-color: var(--neutral-50);
-  background-image: linear-gradient(rgba(252, 250, 248, 0.9), rgba(252, 250, 248, 0.9)), url('../assets/background.jpg');
+  background-image: linear-gradient(rgba(252, 250, 248, 0.55), rgba(252, 250, 248, 0.55)), url('../assets/background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -155,7 +155,7 @@ body {
 }
 
 .dark body {
-  background-image: linear-gradient(rgba(73, 20, 32, 0.94), rgba(73, 20, 32, 0.94)), url('../assets/background.jpg');
+  background-image: linear-gradient(rgba(73, 20, 32, 0.7), rgba(73, 20, 32, 0.7)), url('../assets/background.jpg');
 }
 
 /* Glassmorphism utility */
@@ -167,7 +167,7 @@ body {
 }
 
 .dark .glass-panel {
-  background: rgba(255, 245, 246, 0.7);
+  background: rgba(73, 20, 32, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 125, 150, 0.2);
