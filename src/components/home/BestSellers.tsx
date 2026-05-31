@@ -12,7 +12,7 @@ export default function BestSellers() {
   const bestSellers = PRODUCTS.filter((p) => p.isBestSeller).slice(0, 4);
 
   return (
-    <section className="py-16 sm:py-24 bg-white dark:bg-neutral-950 transition-colors duration-300">
+    <section className="py-16 sm:py-24 bg-white/40 dark:bg-neutral-950/40 backdrop-blur-md transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}

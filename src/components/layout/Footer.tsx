@@ -28,7 +28,7 @@ export default function Footer() {
   const categories: Category[] = ['Plushies', 'Bags', 'Keychains', 'Home Decor', 'Custom Orders'];
 
   return (
-    <footer className="bg-neutral-50 dark:bg-neutral-950 border-t border-brand-coral/10 dark:border-white/5 pt-16 pb-8 transition-colors duration-300">
+    <footer className="bg-neutral-50/70 dark:bg-neutral-950/70 backdrop-blur-md border-t border-brand-coral/10 dark:border-white/5 pt-16 pb-8 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Grid Columns */}

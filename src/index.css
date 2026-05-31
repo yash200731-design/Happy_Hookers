@@ -1,6 +1,6 @@
-@import "tailwindcss";
-
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@import "tailwindcss";
 
 :root {
   --neutral-50: #FCFAF8;
@@ -145,8 +145,17 @@
 body {
   font-family: var(--font-sans);
   background-color: var(--neutral-50);
+  background-image: linear-gradient(rgba(252, 250, 248, 0.9), rgba(252, 250, 248, 0.9)), url('../assets/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--neutral-900);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, background-image 0.3s ease;
+}
+
+.dark body {
+  background-image: linear-gradient(rgba(73, 20, 32, 0.94), rgba(73, 20, 32, 0.94)), url('../assets/background.jpg');
 }
 
 /* Glassmorphism utility */

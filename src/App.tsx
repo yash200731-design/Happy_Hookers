@@ -63,7 +63,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-neutral-50 text-neutral-900 transition-colors duration-300">
+    <div className="min-h-screen flex flex-col bg-transparent text-neutral-900 transition-colors duration-300">
       {/* Dynamic Global Header */}
       <Navbar />
 

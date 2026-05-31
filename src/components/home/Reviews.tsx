@@ -72,7 +72,7 @@ export default function Reviews() {
   const active = BRAND_REVIEWS[index];
 
   return (
-    <section className="py-16 sm:py-24 bg-white dark:bg-neutral-950 transition-colors duration-300 relative overflow-hidden">
+    <section className="py-16 sm:py-24 bg-white/40 dark:bg-neutral-950/40 backdrop-blur-md transition-colors duration-300 relative overflow-hidden">
       
       {/* Background Decorative Rings */}
       <div className="absolute right-0 top-1/4 w-72 h-72 rounded-full bg-brand-lavender/10 blur-3xl -z-10" />
