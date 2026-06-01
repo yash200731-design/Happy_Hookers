@@ -88,8 +88,8 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-fredoka font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-brand-coral dark:text-brand-coral leading-none mb-4"
             >
-              Handmade <br />
-              <span>with Love</span>
+              Modern stitches. <br />
+              <span>Timeless style</span>
             </motion.h1>
 
             {/* Subheading */}
