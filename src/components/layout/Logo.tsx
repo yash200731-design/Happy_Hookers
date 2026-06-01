@@ -50,7 +50,7 @@ export default function Logo({
             <span className="text-brand-coral text-xs animate-pulse">🌸</span>
           </span>
           <span className="font-sans font-semibold text-[9px] md:text-[10px] text-neutral-500 dark:text-neutral-400 leading-none tracking-wider uppercase mt-1">
-            Handmade with Love • Est. 2026
+            Modern stitches. Timeless style
           </span>
         </div>
       )}
