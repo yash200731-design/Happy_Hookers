@@ -5,7 +5,7 @@ import Footer from './components/layout/Footer';
 import Hero from './components/home/Hero';
 import BestSellers from './components/home/BestSellers';
 import NewArrivals from './components/home/NewArrivals';
-import Reviews from './components/home/Reviews';
+
 import AboutPreview from './components/home/AboutPreview';
 import InstagramGallery from './components/home/Instagram';
 import Newsletter from './components/home/Newsletter';
@@ -28,7 +28,7 @@ export default function App() {
             <Hero />
             <BestSellers />
             <NewArrivals />
-            <Reviews />
+
             <AboutPreview />
             <InstagramGallery />
             <Newsletter />

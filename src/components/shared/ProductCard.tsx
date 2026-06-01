@@ -96,16 +96,13 @@ export default function ProductCard({ product }: ProductCardProps) {
           {product.name}
         </h3>
 
-        {/* Rating and Reviews count */}
+        {/* Rating */}
         <div className="flex items-center gap-1 mb-3">
           <div className="flex items-center text-brand-yellow">
             <Star className="h-3.5 w-3.5 fill-brand-yellow" strokeWidth={0} />
           </div>
           <span className="text-[11px] sm:text-xs font-bold text-neutral-700 dark:text-neutral-300">
             {product.rating.toFixed(1)}
-          </span>
-          <span className="text-[10px] sm:text-[11px] text-neutral-400">
-            ({product.reviews.length})
           </span>
         </div>
 

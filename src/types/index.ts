@@ -2,14 +2,7 @@
  * Happy Hookers - Types & Interfaces
  */
 
-export interface Review {
-  id: string;
-  userName: string;
-  rating: number;
-  date: string;
-  comment: string;
-  avatar?: string;
-}
+
 
 export type Category = 'Plushies' | 'Bags' | 'Keychains' | 'Home Decor' | 'Custom Orders';
 
@@ -23,7 +16,7 @@ export interface Product {
   price: number;
   stock: number;
   rating: number;
-  reviews: Review[];
+
   tags: string[];
   isBestSeller?: boolean;
   isNewArrival?: boolean;

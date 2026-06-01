@@ -20,10 +20,6 @@ export const PRODUCTS: Product[] = [
     dimensions: '6" L x 5" W x 5" H',
     materials: ['Super-soft Polyester Chenille Yarn', 'Hypoallergenic Polyester Fiberfill', 'Plastic Safety Eyes (10mm)'],
     careInstructions: 'Spot clean gently with cold water. Allow to air dry completely. Do not machine wash.',
-    reviews: [
-      { id: 'r1_1', userName: 'Meera Sharma', rating: 5, date: 'May 12, 2026', comment: 'So unimaginably soft! Barnaby looks even cuter in person. My son immediately named him Bee-bee-Ji!' },
-      { id: 'r1_2', userName: 'Arjun Goel', rating: 4, date: 'April 20, 2026', comment: 'Extremely well-made and durable. The stitches are perfectly tight. Totally worth the price!' }
-    ]
   },
   {
     id: 'p2',
@@ -44,10 +40,6 @@ export const PRODUCTS: Product[] = [
     dimensions: '4" L x 4" W x 4.5" H',
     materials: ['100% Combed Milk Cotton Yarn', 'Hypoallergenic Polyfill', 'Hand-embroidered Eyes (100% Cotton Thread)'],
     careInstructions: 'Machine washable in a delicate mesh bag on cold/gentle cycle. Lay flat to dry.',
-    reviews: [
-      { id: 'r2_1', userName: 'Kavya Murthy', rating: 5, date: 'May 28, 2026', comment: 'The little curly tentacles are so fun to fiddle with! Cotton yarn is so high quality and baby-safe.' },
-      { id: 'r2_2', userName: 'Sneha Lal', rating: 5, date: 'May 15, 2026', comment: 'Perfect addition to my pastel desk setup! He is absolute perfection.' }
-    ]
   },
   {
     id: 'p3',
@@ -68,9 +60,6 @@ export const PRODUCTS: Product[] = [
     dimensions: '7.5" L x 5.5" W x 5.5" H',
     materials: ['Anti-pilling Pastel Acrylic Yarn', 'Hypoallergenic Polyester Fiberfill', 'Vibrant Felt Accents', '12mm Safety Eyes'],
     careInstructions: 'Hand wash recommended with mild baby detergent. Squeeze out excess water gently (do not wring), dry flat.',
-    reviews: [
-      { id: 'r3_1', userName: 'Riya Patel', rating: 5, date: 'May 04, 2026', comment: 'Penelope is so sweet, and her tiny lavender scarf is just too adorable! Highly recommend Happy Hookers.' }
-    ]
   },
   {
     id: 'p4',
@@ -90,9 +79,6 @@ export const PRODUCTS: Product[] = [
     dimensions: '5" L x 4.5" W x 3" H',
     materials: ['Premium Cotton-Acrylic Yarn', 'Hypoallergenic Polyester Fiberfill', 'Safety Eyes (8mm)'],
     careInstructions: 'Spot clean only with cold water and mild soap.',
-    reviews: [
-      { id: 'r4_1', userName: 'Esha Kapoor', rating: 5, date: 'May 19, 2026', comment: 'Omg, a strawberry turtle! The level of detailing is spectacular. Will shop here again!' }
-    ]
   },
   {
     id: 'p5',
@@ -112,7 +98,6 @@ export const PRODUCTS: Product[] = [
     dimensions: '6.5" L x 4" W x 4" H',
     materials: ['Polyester Bouclé Fluffy Yarn', 'Premium Cotton Accents', 'Safety Eyes with Backings'],
     careInstructions: 'Do not agitate. Hand wash with wool wash, pat dry.',
-    reviews: []
   },
   // BAGS
   {
@@ -134,10 +119,6 @@ export const PRODUCTS: Product[] = [
     dimensions: '13" W x 14" H (Strap Drop: 11")',
     materials: ['100% Mercerized Craft Cotton Yarn (heavyweight)', 'Internal Canvas Linen Lining', 'Magnetic Brass Snap Closure'],
     careInstructions: 'Gently hand wash inside-out. Reshape flat to dry on a white towel to minimize shape shifting.',
-    reviews: [
-      { id: 'r6_1', userName: 'Nisha Rao', rating: 5, date: 'May 01, 2026', comment: 'I get compliments everywhere I go! The lining inside is extremely sturdy, so keys and lipsticks don\'t poke through. Amazing!' },
-      { id: 'r6_2', userName: 'Lipika Trivedi', rating: 4, date: 'April 14, 2026', comment: 'Very thick straps and beautifully lined. I carried multiple books in it and it held up beautifully!' }
-    ]
   },
   {
     id: 'p7',
@@ -157,9 +138,6 @@ export const PRODUCTS: Product[] = [
     dimensions: '9" W x 10" H x 3" D',
     materials: ['Premium Milk Cotton Yarn', 'Wooden Hoop Button', 'Polka-dot Satin Lining'],
     careInstructions: 'Dry clean recommended to maintain leaf stiffness and custom structural form.',
-    reviews: [
-      { id: 'r7_1', userName: 'Jyoti Banerjee', rating: 5, date: 'May 23, 2026', comment: 'Literal strawberry magic. It is so spacious yet maintains its iconic shape perfectly! Absolute craftsmanship.' }
-    ]
   },
   {
     id: 'p8',
@@ -179,7 +157,6 @@ export const PRODUCTS: Product[] = [
     dimensions: '12" W x 11" H x 4" D',
     materials: ['High-Grade Velvet Chenille Yarn', 'Heavy Satin Inner Pocket', 'Zippered Main Closure'],
     careInstructions: 'Spot clean only. Rub gently with a soft sponge, do not ring or iron.',
-    reviews: []
   },
   // KEYCHAINS
   {
@@ -200,9 +177,6 @@ export const PRODUCTS: Product[] = [
     dimensions: '2" W x 3" H (including key ring)',
     materials: ['Combed Egyptian Cotton Thread', 'Gold-plated Alloy lobster clasp', 'Tiny green metallic beads'],
     careInstructions: 'Wipe clean with a damp cloth if dirty.',
-    reviews: [
-      { id: 'r9_1', userName: 'Farah Memon', rating: 5, date: 'May 11, 2026', comment: 'So miniature and cute! Attached to my car keys, and I swear I\'ve had better luck finding parking since!' }
-    ]
   },
   {
     id: 'p10',
@@ -222,9 +196,6 @@ export const PRODUCTS: Product[] = [
     dimensions: '2.5" H x 1.5" W',
     materials: ['Combed Cotton Thread', 'Hypoallergenic Stuffing', 'Premium Silver Key Ring & Charm Loop'],
     careInstructions: 'Dip clean in soapy water, rinse gently, and let air dry.',
-    reviews: [
-      { id: 'r10_1', userName: 'Tanya Lahiri', rating: 5, date: 'April 30, 2026', comment: 'The cuteness is out of bounds! I put Oliver octopus and this boba keychain on my backpack, best matching charm duo EVER!' }
-    ]
   },
   {
     id: 'p11',
@@ -244,7 +215,6 @@ export const PRODUCTS: Product[] = [
     dimensions: '2.2" W x 2.5" H',
     materials: ['100% Milk Cotton Thread', 'Stainless Steel Ring'],
     careInstructions: 'Spot wash with mild detergent and warm water.',
-    reviews: []
   },
   {
     id: 'p12',
@@ -264,7 +234,6 @@ export const PRODUCTS: Product[] = [
     dimensions: '3" H x 1.8" W',
     materials: ['Anti-fuzz cotton acrylic threads', 'Durable steel key clasp'],
     careInstructions: 'Wipe clean gently.',
-    reviews: []
   },
   // HOME DECOR
   {
@@ -286,10 +255,6 @@ export const PRODUCTS: Product[] = [
     dimensions: 'Coaster: 4" Diameter, Pot: 5" H x 4" W',
     materials: ['100% Heavy-duty Heat-absorbent Craft Cotton Yarn', 'Wood Ring Accent for Hanging Pot'],
     careInstructions: 'Highly moisture-absorbent. Machine washable in cold water, reshape and dry flat to prevent curling.',
-    reviews: [
-      { id: 'r13_1', userName: 'Divya Hegde', rating: 5, date: 'May 20, 2026', comment: 'Pure brilliance. When not in use, they sit inside their little pot looking like a real ivy plant! Absorbent and practical.' },
-      { id: 'r13_2', userName: 'Kunal Kohli', rating: 5, date: 'May 06, 2026', comment: 'Gave this to my plant-loving sister and she went nuts! Crochet detailing is extraordinary.' }
-    ]
   },
   {
     id: 'p14',
@@ -310,9 +275,6 @@ export const PRODUCTS: Product[] = [
     dimensions: '12" H x 6" W',
     materials: ['Satin Combed Milk Cotton', 'Wrapped Floral Metal Stems', 'Ribbon bow', 'Eco kraft packaging'],
     careInstructions: 'Dust lightly with a soft brush or hair dryer on cold/low setting.',
-    reviews: [
-      { id: 'r14_1', userName: 'Mansi Fernandes', rating: 5, date: 'May 24, 2026', comment: 'The ideal gift! Best part is I don\'t have to remember to water them. Magnificent!' }
-    ]
   },
   {
     id: 'p15',
@@ -332,7 +294,6 @@ export const PRODUCTS: Product[] = [
     dimensions: '5" H x 2.8" W',
     materials: ['Medium Acrylic Threads', 'Slight weighted bead bottom for high stability', 'Blossom accents'],
     careInstructions: 'Spot dry only.',
-    reviews: []
   },
   {
     id: 'p16',
@@ -352,7 +313,6 @@ export const PRODUCTS: Product[] = [
     dimensions: '8" W x 12" H (including hanging cord)',
     materials: ['Soft Merino Roving Blend', 'Pastel Raindrop Drops', 'Wood dowel rod hanger'],
     careInstructions: 'Shake gently to remove dust. Do not wash.',
-    reviews: []
   },
   // CUSTOM ORDERS
   {
@@ -373,10 +333,6 @@ export const PRODUCTS: Product[] = [
     dimensions: 'Approx 5" - 6" Tall',
     materials: ['Individually selected cotton/acrylic color blends', 'Safe lock-backer eyes', 'Custom fur styling wire brushing'],
     careInstructions: 'A detailed, customized care card will be included with your portrait based on fibers used.',
-    reviews: [
-      { id: 'r17_1', userName: 'Rahul Wadhwa', rating: 5, date: 'May 18, 2026', comment: 'I actually cried. They captured my late Golden Retriever Rusty so perfectly, even his crooked white patch on his chest! Unbelievable masterwork.' },
-      { id: 'r17_2', userName: 'Chitra Verma', rating: 5, date: 'May 10, 2026', comment: 'Excellent communication and absolute craftsmanship. My puppy loves it!' }
-    ]
   },
   {
     id: 'p18',
@@ -396,9 +352,6 @@ export const PRODUCTS: Product[] = [
     dimensions: 'Baby (30"x30") / Throw (45"x60") / Custom',
     materials: ['Premium Anti-pilling Milk Cotton Yarn', 'Satin Brand Tag'],
     careInstructions: 'Machine washable on cold-gentle with mild soap. Lay flat to dry or tumble dry low in a protected mesh garment bag.',
-    reviews: [
-      { id: 'r18_1', userName: 'Nisha Joshi', rating: 5, date: 'May 02, 2026', comment: 'The weight of this blanket is so comforting! It is beautifully woven, dense but incredibly breathable. Our baby curls up in it every single day.' }
-    ]
   },
   {
     id: 'p19',
@@ -418,9 +371,6 @@ export const PRODUCTS: Product[] = [
     dimensions: 'Custom Made-to-measure (XS to 3XL)',
     materials: ['Lofty chunky cotton wool blend', 'Hand-carved premium timber buttons'],
     careInstructions: 'Dry clean or cold hand wash. Reshape flat to maintain structural fit.',
-    reviews: [
-      { id: 'r19_1', userName: 'Ekta Prasad', rating: 5, date: 'May 28, 2026', comment: 'Absolutely spectacular. Feels like concert vibes merged with sweet teddy bears. Perfect slouch and length!' }
-    ]
   },
   {
     id: 'p20',
@@ -440,6 +390,5 @@ export const PRODUCTS: Product[] = [
     dimensions: '4.5" W x 4.5" H',
     materials: ['Craft double-weave pure cotton threads'],
     careInstructions: 'Gently hand wash, flat dry.',
-    reviews: []
   }
 ];

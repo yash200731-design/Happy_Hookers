@@ -174,9 +174,6 @@ export default function ProductDetailView() {
               <span className="text-sm font-bold text-neutral-700 dark:text-neutral-300">
                 {product.rating.toFixed(1)} / 5.0
               </span>
-              <span className="text-xs text-neutral-400">
-                ({product.reviews.length} written reviews)
-              </span>
             </div>
           </div>
 
@@ -355,52 +352,7 @@ export default function ProductDetailView() {
         </div>
       </div>
 
-      {/* Written reviews panel lists */}
-      <div className="mb-16">
-        <h3 className="font-fredoka font-bold text-xl text-neutral-800 dark:text-white mb-6">
-          Community Love Letters ({product.reviews.length})
-        </h3>
 
-        {product.reviews.length > 0 ? (
-          <div className="flex flex-col gap-4">
-            {product.reviews.map((rev) => (
-              <div key={rev.id} className="bg-white dark:bg-neutral-905 border border-brand-coral/5 dark:border-white/5 p-5 rounded-2xl flex flex-col gap-3">
-                <div className="flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-2.5">
-                    <span className="h-8 w-8 rounded-full bg-brand-coral/10 text-brand-coral flex items-center justify-center font-bold text-xs font-fredoka uppercase">
-                      {rev.userName.slice(0, 2)}
-                    </span>
-                    <div className="flex flex-col">
-                      <span className="text-xs font-bold text-neutral-700 dark:text-neutral-200">
-                        {rev.userName}
-                      </span>
-                      <span className="text-[10px] text-neutral-400">
-                        {rev.date} • Verified Stitch Purchaser
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="flex text-brand-yellow">
-                    {[...Array(rev.rating)].map((_, idx) => (
-                      <Star key={idx} className="h-3.5 w-3.5 fill-brand-yellow" strokeWidth={0} />
-                    ))}
-                  </div>
-                </div>
-
-                <p className="text-sm text-neutral-600 dark:text-neutral-305 italic leading-relaxed">
-                  "{rev.comment}"
-                </p>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="bg-neutral-55/20 text-center py-8 rounded-2xl border border-neutral-100 dark:border-neutral-800">
-            <p className="text-xs text-neutral-400 font-medium">
-              No reviews registered yet. Be the first to stitch a cozy love letter! 🧶
-            </p>
-          </div>
-        )}
-      </div>
 
       {/* Related Products list */}
       <div>
