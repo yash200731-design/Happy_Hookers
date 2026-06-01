@@ -1,19 +1,46 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Mail, Send, CheckCircle, Gift, Sparkles, Heart } from 'lucide-react';
+import { supabase, isSupabaseConfigured } from '../../lib/supabase';
 
 export default function Newsletter() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
     setStatus('loading');
-    setTimeout(() => {
-      setStatus('success');
-      setEmail('');
-    }, 1200);
+    setError(null);
+
+    if (isSupabaseConfigured && supabase) {
+      try {
+        const { error: dbError } = await supabase
+          .from('newsletter_subscribers')
+          .insert([{ email }]);
+
+        if (dbError) {
+          if (dbError.code === '23505') {
+            throw new Error('This email is already stitched into our loop list!');
+          }
+          throw dbError;
+        }
+
+        setStatus('success');
+        setEmail('');
+      } catch (err: any) {
+        console.error('[Supabase Error] newsletter_subscribers submission failed:', err);
+        setError(err.message || 'Failed to subscribe. Please try again.');
+        setStatus('idle');
+      }
+    } else {
+      // Local fallback mode
+      setTimeout(() => {
+        setStatus('success');
+        setEmail('');
+      }, 1200);
+    }
   };
 
   return (
@@ -65,32 +92,42 @@ export default function Newsletter() {
                 </p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row items-stretch gap-3 w-full">
-                <div className="relative flex-grow">
-                  <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-neutral-400">
-                    <Mail className="h-4.5 w-4.5" />
-                  </span>
-                  <input
-                    type="email"
-                    required
-                    placeholder="Enter your cozy email address..."
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full h-12 pl-10 pr-3.5 rounded-2xl border border-brand-coral/25 bg-white dark:bg-neutral-900 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-brand-coral transition-all"
-                    id="newsletter-email-field"
-                  />
-                </div>
-                
-                <button
-                  type="submit"
-                  disabled={status === 'loading'}
-                  className="h-12 px-6 bg-brand-coral hover:bg-primary-600 disabled:opacity-50 text-white font-fredoka font-bold text-sm tracking-widest rounded-2xl flex items-center justify-center gap-1.5 cursor-pointer shadow-xs transition-colors"
-                  id="newsletter-submit-btn"
-                >
-                  <span>Join List</span>
-                  <Send className="h-3.5 w-3.5" />
-                </button>
-              </form>
+              <div className="flex flex-col gap-2 w-full">
+                <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row items-stretch gap-3 w-full">
+                  <div className="relative flex-grow">
+                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-neutral-400">
+                      <Mail className="h-4.5 w-4.5" />
+                    </span>
+                    <input
+                      type="email"
+                      required
+                      placeholder="Enter your cozy email address..."
+                      value={email}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                        if (error) setError(null);
+                      }}
+                      className="w-full h-12 pl-10 pr-3.5 rounded-2xl border border-brand-coral/25 bg-white dark:bg-neutral-900 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-brand-coral transition-all"
+                      id="newsletter-email-field"
+                    />
+                  </div>
+                  
+                  <button
+                    type="submit"
+                    disabled={status === 'loading'}
+                    className="h-12 px-6 bg-brand-coral hover:bg-primary-600 disabled:opacity-50 text-white font-fredoka font-bold text-sm tracking-widest rounded-2xl flex items-center justify-center gap-1.5 cursor-pointer shadow-xs transition-colors"
+                    id="newsletter-submit-btn"
+                  >
+                    <span>{status === 'loading' ? 'Joining...' : 'Join List'}</span>
+                    <Send className="h-3.5 w-3.5" />
+                  </button>
+                </form>
+                {error && (
+                  <div className="text-red-500 text-xs font-semibold text-center lg:text-left bg-red-50 dark:bg-red-950/20 border border-red-200/20 p-2.5 rounded-xl mt-1">
+                    {error}
+                  </div>
+                )}
+              </div>
             )}
 
             <p className="text-[10px] text-neutral-450 dark:text-neutral-500 mt-3 text-center lg:text-left leading-normal font-semibold">

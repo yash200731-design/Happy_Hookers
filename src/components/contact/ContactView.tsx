@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Mail, HelpCircle, Send, CheckCircle, Clock, MapPin, ChevronDown, ChevronUp } from 'lucide-react';
 import Mascot from '../mascot/Mascot';
+import { supabase, isSupabaseConfigured } from '../../lib/supabase';
 
 interface FaqItem {
   q: string;
@@ -30,21 +31,50 @@ const FAQ_ITEMS: FaqItem[] = [
 export default function ContactView() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success'>('idle');
+  const [formError, setFormError] = useState<string | null>(null);
   const [activeFaqIdx, setActiveFaqIdx] = useState<number | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    if (formError) setFormError(null);
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
     setFormStatus('loading');
-    setTimeout(() => {
-      setFormStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 1200);
+    setFormError(null);
+
+    if (isSupabaseConfigured && supabase) {
+      try {
+        const { error } = await supabase
+          .from('contact_inquiries')
+          .insert([
+            {
+              name: formData.name,
+              email: formData.email,
+              subject: formData.subject || null,
+              message: formData.message,
+            },
+          ]);
+
+        if (error) throw error;
+
+        setFormStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } catch (err: any) {
+        console.error('[Supabase Error] contact_inquiries submission failed:', err);
+        setFormError(err.message || 'Unable to submit your inquiry. Please check your connection and try again.');
+        setFormStatus('idle');
+      }
+    } else {
+      // Local fallback mode
+      setTimeout(() => {
+        setFormStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      }, 1200);
+    }
   };
 
   const toggleFaq = (idx: number) => {
@@ -229,6 +259,13 @@ export default function ContactView() {
                   />
                 </div>
 
+                {/* Error message */}
+                {formError && (
+                  <div className="text-red-500 text-xs font-semibold bg-red-50 dark:bg-red-950/20 border border-red-200/20 p-3 rounded-xl">
+                    {formError}
+                  </div>
+                )}
+
                 {/* Submit button */}
                 <button
                   type="submit"
@@ -236,7 +273,7 @@ export default function ContactView() {
                   className="h-11 bg-brand-coral hover:bg-primary-600 disabled:opacity-50 text-white font-fredoka font-bold text-xs tracking-widest rounded-2xl flex items-center justify-center gap-1.5 cursor-pointer shadow-xs transition-colors mt-2"
                   id="contact-submit"
                 >
-                  <span>Transmit Inquiry</span>
+                  <span>{formStatus === 'loading' ? 'Stitching...' : 'Transmit Inquiry'}</span>
                   <Send className="h-3.5 w-3.5" />
                 </button>
 
