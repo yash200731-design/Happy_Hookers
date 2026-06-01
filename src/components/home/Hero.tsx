@@ -99,7 +99,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base sm:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300 max-w-lg mb-8 leading-relaxed font-medium"
             >
-              Whimsical crochet creations crafted to bring joy, tactile warmth, and kawaii character to your daily orbits.
+              Explore handcrafted crochet creations for every occasion
             </motion.p>
 
             {/* Action Buttons */}
