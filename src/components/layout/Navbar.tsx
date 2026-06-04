@@ -42,7 +42,7 @@ export default function Navbar() {
       {/* Top micro announcement bar */}
       <div className="bg-brand-coral text-white py-1 px-4 text-center text-xs font-semibold tracking-wider flex items-center justify-center gap-2 select-none">
         <Gift className="h-3 w-3 animate-bounce" />
-        <span>✨ Free Shipping on amigurumi orders over ₹3,000! ✨</span>
+        <span>✨ Welcome to our store! ✨</span>
       </div>
 
       <header className="sticky top-0 z-40 w-full glass-panel transition-all duration-300 border-b border-brand-coral/10 dark:border-white/5 shadow-sm">
